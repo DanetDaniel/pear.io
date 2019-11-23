@@ -12,12 +12,104 @@ body {
     font-family: "Rubik";
     display: grid;
     grid-template-columns: 20% auto 5%;
-    grid-template-rows: 100px auto auto 350px;
+    grid-template-rows: 50px auto auto 350px;
     grid-template-areas: "nav nav nav"
         "header header header"
         "side content margin"
         "footer footer footer";
     min-height: 100vh;
+}
+
+.navbar {
+    background-color: #27ae60;
+    height: 50px;
+    padding: .5em 2em;
+    margin: 0px;
+}
+
+.logo-container {
+    color: white;
+    font-size: 1.5em;
+    justify-content: center;
+}
+
+.navbar-buttons {
+    display: flex;
+    justify-content: space-between;
+    background-color: #27ae60;
+}
+
+.navbar input {
+    font-family: "Rubik";
+    font-size: 1em;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: 0;
+    cursor: pointer;
+}
+
+.input {
+    background-color: #27ae60;
+    height: 40px;
+    width: auto;
+    margin: 0 10px;
+}
+
+#register-btn {
+    background: white;
+    padding: .25em;
+    color: #2ECC71;
+    border-radius: 5px;
+    transition: 100ms ease;
+}
+
+#register-btn:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.navbar input {
+    color: white;
+    transition: 100ms ease;
+}
+
+.navbar input:hover {
+    border-bottom: 2px solid white;
+}
+
+.inputs-middle {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.inputs-right {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.inputs-middle {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.content-container {
+    grid-area: content;
+    padding: 20px;
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+.content {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
 nav {
@@ -145,12 +237,32 @@ footer a {
 @media screen and (max-width: 768px) {
     body {
         grid-template-columns: 1fr;
-        grid-template-rows: 100px auto auto auto 350px;
+        grid-template-rows: auto auto auto auto 350px;
         grid-template-areas: "nav"
             "header"
             "side"
             "content"
             "footer";
+    }
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbar-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inputs-middle {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .inputs-right {
+        flex-direction: column;
     }
 
     header {
@@ -170,12 +282,18 @@ footer a {
     }
 
     .aside {
+        text-align: center;
         width: 100vw;
     }
 
+    .sub-category {
+        margin: 0;
+    }
+
+
     footer {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, auto);
+        grid-template-rows: auto auto minmax(800px, auto) auto;
         grid-template-areas: "first-col"
             "second-col"
             "third-col"
